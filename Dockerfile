@@ -17,6 +17,7 @@ RUN python3 -m venv venv && \
 
 COPY . /botamusique
 RUN (cd web/ && npm install && npm run build)
+RUN ./venv/bin/python ./scripts/translate_templates.py --lang-dir lang/ --template-dir templates/
 RUN chmod +x entrypoint.sh
 
 ENTRYPOINT [ "/botamusique/entrypoint.sh" ]
