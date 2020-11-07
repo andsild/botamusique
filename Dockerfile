@@ -10,7 +10,6 @@ RUN apt update && \
 RUN mkdir /botamusique
 COPY requirements.txt /botamusique
 WORKDIR /botamusique
-RUN rm -rf .git*
 
 RUN python3 -m venv venv && \
     venv/bin/pip install wheel && \
