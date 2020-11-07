@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 EXPOSE 8181
 
 RUN apt update && \
-    apt install -y opus-tools ffmpeg libmagic-dev curl tar && \
+    apt install -y opus-tools ffmpeg libmagic-dev curl tar npm && \
     rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /botamusique
@@ -16,6 +16,7 @@ RUN python3 -m venv venv && \
     venv/bin/pip install -r requirements.txt
 
 COPY . /botamusique
+RUN (cd web/ && npm install && npm run build)
 RUN chmod +x entrypoint.sh
 
 ENTRYPOINT [ "/botamusique/entrypoint.sh" ]
