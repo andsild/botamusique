@@ -5,7 +5,8 @@ pipeline {
       steps {
         sh '''
           ./gradlew build --info
-          ./gradlew publish --info
+          # Not necessary with docker and this lazy setup
+          # ./gradlew publish --info
         '''
       }
     }
