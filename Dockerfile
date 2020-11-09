@@ -15,8 +15,9 @@ RUN python3 -m venv venv && \
     venv/bin/pip install wheel && \
     venv/bin/pip install -r requirements.txt
 
-COPY . /botamusique
-RUN (cd web/ && npm install && npm run build)
+COPY . /botamusique/
+RUN ls /botamusique
+RUN (cd /botamusique/web && npm install && npm run build)
 RUN ./venv/bin/python ./scripts/translate_templates.py --lang-dir lang/ --template-dir templates/
 RUN chmod +x entrypoint.sh
 

@@ -1,0 +1,11 @@
+version: "3.6"
+
+services:
+  main:
+    image: benkemannen:latest
+    hostname: qwde.no
+    ports:
+      - 8181:8181
+    volumes:
+      - /var/music:/var/music
+      - /etc/cert/botamusique.pem:/etc/cert/botamusique.pem

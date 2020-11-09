@@ -1,1 +1,11 @@
 .git/
+docker-compose.yml
+
+README.md
+LICENSE
+Jenkinsfile
+target/
+build.gradle.kts
+gradlew
+gradlew.bat
+.gradle/
