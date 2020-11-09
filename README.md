@@ -1,3 +1,4 @@
+# Fork of botamusique bot, mainly adding in my own CI-stuff...
 <div align="center">
 <img src="static/image/logo.png" alt="botamusique" width="200px" />
 <h1>botamusique</h1>
